@@ -1,4 +1,4 @@
- <!-- Space: TerraformModuleTemplate -->
+ <!-- Space: TerraformAwsIamUser -->
 <!-- Title: Project -->
 
 <!--
@@ -15,17 +15,11 @@
 
   -->
 
-[![Latest Release](https://img.shields.io/github/release/hadenlabs/terraform-module-template)](https://github.com/hadenlabs/terraform-module-template/releases) [![Lint](https://img.shields.io/github/workflow/status/hadenlabs/terraform-module-template/lint-code)](https://github.com/hadenlabs/terraform-module-template/actions?workflow=lint-code) [![CI](https://img.shields.io/github/workflow/status/hadenlabs/terraform-module-template/ci)](https://github.com/hadenlabs/terraform-module-template/actions?workflow=ci) [![Test](https://img.shields.io/github/workflow/status/hadenlabs/terraform-module-template/test)](https://github.com/hadenlabs/terraform-module-template/actions?workflow=test) [![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white)](https://github.com/pre-commit/pre-commit) [![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow)](https://conventionalcommits.org) [![KeepAChangelog](https://img.shields.io/badge/Keep%20A%20Changelog-1.0.0-%23E05735)](https://keepachangelog.com)
+[![Latest Release](https://img.shields.io/github/release/hadenlabs/terraform-aws-iam-user)](https://github.com/hadenlabs/terraform-aws-iam-user/releases) [![Lint](https://img.shields.io/github/workflow/status/hadenlabs/terraform-aws-iam-user/lint-code)](https://github.com/hadenlabs/terraform-aws-iam-user/actions?workflow=lint-code) [![CI](https://img.shields.io/github/workflow/status/hadenlabs/terraform-aws-iam-user/ci)](https://github.com/hadenlabs/terraform-aws-iam-user/actions?workflow=ci) [![Test](https://img.shields.io/github/workflow/status/hadenlabs/terraform-aws-iam-user/test)](https://github.com/hadenlabs/terraform-aws-iam-user/actions?workflow=test) [![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white)](https://github.com/pre-commit/pre-commit) [![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow)](https://conventionalcommits.org) [![KeepAChangelog](https://img.shields.io/badge/Keep%20A%20Changelog-1.0.0-%23E05735)](https://keepachangelog.com)
 
-# terraform-module-template
+# terraform-aws-iam-user
 
-terraform-module-template for project
-
-### Replace name project to New Project
-
-```bash
-  agr 'terraform-module-template' 'new-project'
-```
+terraform-aws-iam-user for project
 
 ## Requirements
 
@@ -40,17 +34,12 @@ This is a list of plugins that need to be installed previously to enjoy all the 
 
 ```hcl
   module "main" {
-    source  = "app.terraform.io/hadenlabs/terraform-module-template/aws"
-    version = "0.1.1"
+    source  = "hadenlabs/iam-user/aws"
+    version = "0.0.0"
 
     providers = {
       aws = aws
-      template = template
-      local = local
     }
-    name        = var.name
-    public_key  = var.public_key
-    private_key = var.public_key
 
   }
 ```
@@ -63,17 +52,12 @@ Full working examples can be found in [examples](./examples) folder.
 
 ```hcl
   module "main" {
-    source  = "app.terraform.io/hadenlabs/terraform-module-template/aws"
-    version = "0.1.1"
+    source  = "hadenlabs/iam-user/aws"
+    version = "0.0.0"
 
     providers = {
       aws = aws
-      template = template
-      local = local
     }
-    name        = var.name
-    public_key  = var.public_key
-    private_key = var.private_key
   }
 ```
 
@@ -111,13 +95,13 @@ No outputs.
 
 **Got a question?**
 
-File a GitHub [issue](https://github.com/hadenlabs/terraform-module-template/issues).
+File a GitHub [issue](https://github.com/hadenlabs/terraform-aws-iam-user/issues).
 
 ## Contributing
 
 ### Bug Reports & Feature Requests
 
-Please use the [issue tracker](https://github.com/hadenlabs/terraform-module-template/issues) to report any bugs or file feature requests.
+Please use the [issue tracker](https://github.com/hadenlabs/terraform-aws-iam-user/issues) to report any bugs or file feature requests.
 
 ### Development
 
@@ -159,6 +143,6 @@ All other trademarks referenced herein are the property of their respective owne
 
 The code and styles are licensed under the LGPL-3.0 license [See project license.](LICENSE).
 
-## Don't forget to 🌟 Star 🌟 the repo if you like terraform-module-template
+## Don't forget to 🌟 Star 🌟 the repo if you like terraform-aws-iam-user
 
-[Your feedback is appreciated](https://github.com/hadenlabs/terraform-module-template/issues)
+[Your feedback is appreciated](https://github.com/hadenlabs/terraform-aws-iam-user/issues)
