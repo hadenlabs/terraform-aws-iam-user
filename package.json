@@ -1,7 +1,7 @@
 {
-  "name": "@hadenlabs/terraform-module-template",
+  "name": "@hadenlabs/terraform-aws-iam-user",
   "version": "0.0.0",
-  "description": "terraform-module-template",
+  "description": "terraform-aws-iam-user",
   "author": "Luis Mayta <slovacus@gmail.com>",
   "license": "LGPL-3.0",
   "engines": {
@@ -33,18 +33,18 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/hadenlabs/terraform-module-template.git"
+    "url": "git+https://github.com/hadenlabs/terraform-aws-iam-user.git"
   },
   "keywords": [
     "hadenlabs",
-    "template",
-    "base",
-    "tool"
+    "aws",
+    "iam",
+    "user"
   ],
   "bugs": {
-    "url": "https://github.com/hadenlabs/terraform-module-template/issues"
+    "url": "https://github.com/hadenlabs/terraform-aws-iam-user/issues"
   },
-  "homepage": "https://github.com/hadenlabs/terraform-module-template#readme",
+  "homepage": "https://github.com/hadenlabs/terraform-aws-iam-user#readme",
   "dependencies": {},
   "devDependencies": {
     "@types/rimraf": "^3.0.2",
