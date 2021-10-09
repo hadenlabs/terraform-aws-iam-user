@@ -1,4 +1,4 @@
-<!-- Space: TerraformModuleTemplate -->
+<!-- Space: TerraformAwsIamUser -->
 <!-- Parent: Project -->
 <!-- Title: Code of Conduct -->
 
