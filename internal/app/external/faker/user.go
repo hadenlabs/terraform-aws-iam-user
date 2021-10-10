@@ -2,15 +2,18 @@ package faker
 
 import (
 	"crypto/rand"
+	"fmt"
 	"math/big"
+
+	"github.com/lithammer/shortuuid/v3"
 
 	"github.com/hadenlabs/terraform-aws-iam-user/internal/errors"
 )
 
 type FakeUser interface {
-	Name() string      // => "username fake"
-	FirstName() string // => "FirstName User"
-	Path() string      // => "Path of User"
+	Name() string      // username fake
+	FirstName() string // FirstName User
+	Path() string      // Path of User
 }
 
 type fakeUser struct{}
@@ -30,7 +33,8 @@ func (n fakeUser) Name() string {
 	if err != nil {
 		panic(errors.New(errors.ErrorUnknown, err.Error()))
 	}
-	return names[num.Int64()]
+	nameuuid := fmt.Sprintf("%s-%s", names[num.Int64()], shortuuid.New())
+	return nameuuid
 }
 
 func (n fakeUser) FirstName() string {
