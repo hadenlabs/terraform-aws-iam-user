@@ -7,7 +7,7 @@ locals {
   input = {
     username                = var.username
     first_name              = var.first_name
-    path                    = try(var.path, local.defaults.path)
+    path                    = var.path == null ? local.defaults.path : var.path
     public_key              = var.public_key
     password_reset_required = try(var.password_reset_required, local.defaults.password_reset_required)
   }
