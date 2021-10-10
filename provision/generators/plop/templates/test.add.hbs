@@ -3,18 +3,33 @@ package test
 import (
 	"testing"
 
+	"fmt"
+
 	"github.com/gruntwork-io/terratest/modules/terraform"
-	"github.com/stretchr/testify/assert"
+	log "github.com/sirupsen/logrus"
+
+	"github.com/hadenlabs/terraform-aws-iam-user/internal/app/external/faker"
 )
 
 func Test{{pascalCase testName}}Success(t *testing.T) {
 	t.Parallel()
+	username := faker.User().Name()
+	firstName := faker.User().FirstName()
+	path := faker.User().Path()
+	publicKey := "../fixtures/keys/terraform-aws-iam-user-testing.pub"
+	log.Debug(fmt.Sprintf("value of username %s", username))
+	log.Debug(fmt.Sprintf("value of firstName %s", firstName))
+	log.Debug(fmt.Sprintf("value of path %s", path))
 
 	terraformOptions := &terraform.Options{
 		// The path to where your Terraform code is located
-        TerraformDir: "replace-name-{{dashCase testName}}",
+        TerraformDir: "user-{{dashCase testName}}",
 		Upgrade:      true,
 		Vars: map[string]interface{}{
+			"username":   username,
+			"first_name": firstName,
+			"path":       path,
+			"public_key": publicKey,
 		},
 	}
 
@@ -23,6 +38,4 @@ func Test{{pascalCase testName}}Success(t *testing.T) {
 
 	// This will run `terraform init` and `terraform apply` and fail the test if there are any errors
 	terraform.InitAndApply(t, terraformOptions)
-	outputInstance := terraform.Output(t, terraformOptions, "instance")
-	assert.NotEmpty(t, outputInstance, outputInstance)
 }
