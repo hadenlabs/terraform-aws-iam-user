@@ -3,23 +3,27 @@ package test
 import (
 	"testing"
 
-	"fmt"
-
 	"github.com/gruntwork-io/terratest/modules/terraform"
-	log "github.com/sirupsen/logrus"
 
+	"github.com/hadenlabs/terraform-aws-iam-user/config"
 	"github.com/hadenlabs/terraform-aws-iam-user/internal/app/external/faker"
+	"github.com/hadenlabs/terraform-aws-iam-user/internal/common/log"
 )
 
 func Test{{pascalCase testName}}Success(t *testing.T) {
 	t.Parallel()
+	conf := config.Must()
+	logger := log.Factory(*conf)
 	username := faker.User().Name()
 	firstName := faker.User().FirstName()
 	path := faker.User().Path()
 	publicKey := "../fixtures/keys/terraform-aws-iam-user-testing.pub"
-	log.Debug(fmt.Sprintf("value of username %s", username))
-	log.Debug(fmt.Sprintf("value of firstName %s", firstName))
-	log.Debug(fmt.Sprintf("value of path %s", path))
+	logger.Debugf(
+		"values for test user-basic aws is",
+		"username", username,
+		"firstname", firstName,
+		"path", path,
+	)
 
 	terraformOptions := &terraform.Options{
 		// The path to where your Terraform code is located
