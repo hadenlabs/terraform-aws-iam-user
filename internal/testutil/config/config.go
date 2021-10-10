@@ -1,9 +1,10 @@
 package config
 
 import (
+	"github.com/joho/godotenv"
+
 	coreconfig "github.com/hadenlabs/terraform-aws-iam-user/config"
 	"github.com/hadenlabs/terraform-aws-iam-user/internal/errors"
-	"github.com/joho/godotenv"
 )
 
 func LoadEnvWithFilename(filename string) (*coreconfig.Config, error) {

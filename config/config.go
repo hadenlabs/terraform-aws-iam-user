@@ -17,7 +17,6 @@ type Config struct {
 }
 
 const (
-	configFile      = ".env"
 	applicationName = "terraform-aws-iam-user"
 )
 
@@ -41,7 +40,6 @@ func ReadConfig() (*Config, error) {
 
 // Initialize new instance.
 func Initialize() *Config {
-	conf := New()
 	conf, err := ReadConfig()
 	if err != nil {
 		panic(errors.Wrap(err, errors.ErrorReadConfig, ""))
